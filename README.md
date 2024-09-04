@@ -1,2 +1,12 @@
-# Multimodal_Gamedev_ai
-Joined a bunch of AI models to make a sort of AI game development tool
+---
+title: MultimodalGDtool
+emoji: 👁
+colorFrom: pink
+colorTo: blue
+sdk: gradio
+sdk_version: 4.38.1
+app_file: app.py
+pinned: false
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
