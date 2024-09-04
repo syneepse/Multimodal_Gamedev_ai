@@ -10,16 +10,17 @@ if torch.cuda.is_available():
     device = "cuda"
 device = torch.device(device)
 
-xm = load_model('transmitter', device=device)
-model = load_model('text300M', device=device)
-diffusion = diffusion_from_config(load_config('diffusion'))
+
 
 batch_size = 1 # this is the size of the models, higher values take longer to generate.
 guidance_scale = 15.0 # this is the scale of the guidance, higher values make the model look more like the prompt.
-prompt = "a tiger" # this is the prompt, you can change this to anything you want.
+
 
 
 def getShape(inputString):
+    xm = load_model('transmitter', device=device)
+    model = load_model('text300M', device=device)
+    diffusion = diffusion_from_config(load_config('diffusion'))
     prompt = inputString
     latents = sample_latents(
         batch_size=batch_size,
