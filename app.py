@@ -25,12 +25,12 @@ def change_Output(choice):
     Model_name, Image_bool, Output_Image, Output_Model = modelLib.PromptInput(choice)
     print(Model_name, Image_bool, Output_Model, Output_Image)
     if  not Image_bool:
-        return {description: gr.Markdown("Model Name: "  ,visible=True), view3D: gr.Model3D(value=Output_Model , visible=True), OutputImage: gr.Image(visible=False)}
+        return {description: gr.Markdown("Model Name: " + Model_name  ,visible=True), view3D: gr.Model3D(value=Output_Model , visible=True), OutputImage: gr.Image(visible=False)}
     else:
-        return {description: gr.Markdown("Model Name: " ,visible=True), view3D: gr.Model3D(visible=False),OutputImage: gr.Image(value= 'Sample-Image.jpg', visible=True)}
+        return {description: gr.Markdown("Model Name: " ,visible=True), view3D: gr.Model3D(visible=False),OutputImage: gr.Image(value= Output_Image, visible=True)}
 
 with gr.Blocks() as demo:
-    user_input = gr.MultimodalTextbox( placeholder="prompt or file" )
+    user_input = gr.MultimodalTextbox( placeholder="prompt or file", file_count= 'single' )
     description = gr.Markdown(visible=False)
     OutputImage = gr.Image(visible=False)
     view3D = gr.Model3D(visible=False)

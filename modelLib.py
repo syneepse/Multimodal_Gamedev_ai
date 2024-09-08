@@ -26,7 +26,7 @@ def imgUpscale(inputString, inputImage):
 
 def imgCreate(inputString, inputImage):
     print("img creator")
-    returnImage = 'Sample-Image.jpg'
+    #returnImage = 'Sample-Image.jpg'
     returnImage = sdi2i.runModel(inputImage, inputString)
     return returnImage
     
